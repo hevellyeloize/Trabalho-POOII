@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+    <tabs>
+        <!-- ABA DE LIVROS -->
+        <Tab text="Gerenciar Livros">
+            <content>
+                <fx:include source="livro-view.fxml" />
+            </content>
+        </Tab>
+
+        <!-- ABA DE USUÁRIOS -->
+        <Tab text="Gerenciar Usuários">
+            <content>
+                <fx:include source="usuario-view.fxml" />
+            </content>
+        </Tab>
+
+        <!-- ABA DE EMPRÉSTIMOS -->
+        <Tab text="Gerenciar Empréstimos">
+            <content>
+                <fx:include source="emprestimo-view.fxml" />
+            </content>
+        </Tab>
+
+        <!-- ABA DE MULTAS -->
+        <Tab text="Gerenciar Multas">
+            <content>
+                <fx:include source="multa-view.fxml" />
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>

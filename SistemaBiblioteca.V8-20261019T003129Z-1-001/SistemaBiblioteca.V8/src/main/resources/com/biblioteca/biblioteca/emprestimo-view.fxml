@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.biblioteca.biblioteca.controller.EmprestimoController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Gerenciamento de Empréstimos" />
+
+    <!-- Formulário para Inserir/Editar Empréstimo -->
+    <GridPane hgap="10" vgap="10">
+        <Label text="Usuário:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <ComboBox fx:id="cbUsuario" prefWidth="300" promptText="Selecione o usuário" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label text="Livro:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <ComboBox fx:id="cbLivro" prefWidth="300" promptText="Selecione o livro" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="Data Empréstimo:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <DatePicker fx:id="dpDataEmprestimo" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label text="Data Devolução:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <DatePicker fx:id="dpDataDevolucao" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+        <Label text="Status:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <ComboBox fx:id="cbStatus" prefWidth="200" promptText="Selecione o status" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+    </GridPane>
+
+    <!-- Botões de Ação CRUD -->
+    <HBox spacing="10">
+        <Button onAction="#onSalvarClick" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Salvar Empréstimo" />
+        <Button onAction="#onExcluirClick" style="-fx-background-color: #f44336; -fx-text-fill: white;" text="Excluir Selecionado" />
+        <Button onAction="#onLimparClick" text="Limpar Campos" />
+    </HBox>
+
+    <Separator />
+
+    <!-- Tabela para Listar os Empréstimos -->
+    <TableView fx:id="tabelaEmprestimos" prefHeight="220.0" prefWidth="650.0">
+        <columns>
+            <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
+            <TableColumn fx:id="colUsuario" prefWidth="150.0" text="Usuário" />
+            <TableColumn fx:id="colLivro" prefWidth="180.0" text="Livro" />
+            <TableColumn fx:id="colDataEmprestimo" prefWidth="110.0" text="Data Empréstimo" />
+            <TableColumn fx:id="colDataDevolucao" prefWidth="110.0" text="Data Devolução" />
+            <TableColumn fx:id="colStatus" prefWidth="90.0" text="Status" />
+        </columns>
+    </TableView>
+</VBox>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.biblioteca.biblioteca.controller.UsuarioController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Gerenciamento de Usuários" />
+
+    <!-- Formulário para Inserir/Editar Usuário -->
+    <GridPane hgap="10" vgap="10">
+        <Label text="Nome:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="txtNome" prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label text="E-mail:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="txtEmail" prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="Telefone:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="txtTelefone" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    </GridPane>
+
+    <!-- Botões de Ação CRUD -->
+    <HBox spacing="10">
+        <Button onAction="#onSalvarClick" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Salvar Usuário" />
+        <Button onAction="#onExcluirClick" style="-fx-background-color: #f44336; -fx-text-fill: white;" text="Excluir Selecionado" />
+        <Button onAction="#onLimparClick" text="Limpar Campos" />
+    </HBox>
+
+    <Separator />
+
+    <!-- Tabela para Listar os Usuários do Banco -->
+    <TableView fx:id="tabelaUsuarios" prefHeight="250.0" prefWidth="550.0">
+        <columns>
+            <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
+            <TableColumn fx:id="colNome" prefWidth="180.0" text="Nome" />
+            <TableColumn fx:id="colEmail" prefWidth="200.0" text="E-mail" />
+            <TableColumn fx:id="colTelefone" prefWidth="120.0" text="Telefone" />
+        </columns>
+    </TableView>
+</VBox>
